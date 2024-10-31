@@ -2,8 +2,25 @@ from django.db import models
 
 # Create your models here.
 class Can(models.Model):
+    OPTIONS_LINE = [
+        ('BEAST', 'Beast'),
+        ('ENERGY', 'Energy'),
+        ('ESPRESSO', 'Espresso'),
+        ('ICE TEA', 'Ice Tea'),
+        ('JAVA', 'Java'),
+        ('JUICE', 'Juice'),
+        ('MAXX', 'Maxx'),
+        ('NITRO', 'Nitro'),
+        ('PUNCH', 'Punch'),
+        ('REHAB', 'Rehab'),
+        ('RESERVE', 'Reserve'),
+        ('TOUR WATER', 'Tour Water'),
+        ('ULTRA', 'Ultra'),
+    ]
+
+
     name = models.CharField(max_length=100)
-    line = models.CharField(max_length=50)
+    line = models.CharField(max_length=50, choices=OPTIONS_LINE, default='Energy')
     country = models.CharField(max_length=50)
     continent = models.CharField(max_length=50)
     size = models.IntegerField()  # Armazena o valor numérico do tamanho em ml

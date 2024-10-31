@@ -22,7 +22,7 @@
                             {% if cans %}
                             {% for can in cans %}
                             <li class="card">
-                                <a href="{% url 'image' %}">
+                                <a href="{% url 'image' can.id %}">
                                     <img class="card__imagem" src="{% static '/assets/imagens/galeria/'%}{{ can.img_front }}" alt="foto">
                                 </a>
                                 <span class="card__tag">Estrelas</span>
